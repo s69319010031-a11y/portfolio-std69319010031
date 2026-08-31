@@ -9,6 +9,178 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        /* ================= Google Fonts & Global Styles ================= */
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ================= Header ================= */
+        header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #ffffff;
+            text-align: center;
+            padding: 3.5rem 1rem 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.4rem;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #94a3b8;
+            font-weight: 300;
+        }
+
+        /* ================= Navigation ================= */
+        nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            padding: 0.75rem 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* ปุ่มแบบวงรี (Pill Buttons) */
+        nav ul li a {
+            display: inline-block;
+            padding: 0.5rem 1.4rem;
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            background-color: #f1f5f9;
+            transition: all 0.25s ease;
+            border: 1px solid transparent;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+            background-color: #2563eb;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+            transform: translateY(-1px);
+        }
+
+        /* ไฮไลต์ปุ่ม Skills */
+        nav ul li a[href="skills.html"] {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+
+        /* ================= Main Content ================= */
+        main {
+            flex: 1;
+            max-width: 800px;
+            width: 90%;
+            margin: 2.5rem auto;
+        }
+
+        section {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2e8f0;
+        }
+
+        section h2 {
+            font-size: 1.6rem;
+            color: #0f172a;
+            border-bottom: 3px solid #2563eb;
+            display: inline-block;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.5rem;
+            text-transform: capitalize;
+        }
+
+        section p {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            color: #334155;
+            font-size: 1rem;
+            line-height: 1.8;
+            white-space: pre-line; /* รักษารูปแบบการเว้นบรรทัดของข้อความเดิม */
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+            background-color: #f1f5f9;
+            border-left: 4px solid #2563eb;
+            border-radius: 4px 12px 12px 4px;
+            color: #475569;
+        }
+
+        /* ================= Footer ================= */
+        footer {
+            background-color: #0f172a;
+            color: #64748b;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+            font-size: 0.875rem;
+        }
+
+        /* ================= Responsive ================= */
+        @media (max-width: 600px) {
+            header {
+                padding: 2.5rem 1rem 1.8rem;
+            }
+
+            header h1 {
+                font-size: 1.75rem;
+            }
+
+            nav ul {
+                gap: 0.35rem;
+            }
+
+            nav ul li a {
+                padding: 0.4rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -38,7 +210,7 @@
             <li><a href="gallery.html">Gallery</a></li>
 
             <li><a href="contact.html">Contact</a></li>
-             
+
             <li><a href="other.html">เพิ่มเติม</a></li>
 
         </ul>

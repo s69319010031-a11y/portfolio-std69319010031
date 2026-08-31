@@ -4,77 +4,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Pornphithak Shitthi</title>
 
-    <title>Pornphithak Shitthi</title>
+    <style>
+        /* ================= Google Fonts & Global Styles ================= */
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap');
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ================= Header ================= */
+        header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #ffffff;
+            text-align: center;
+            padding: 3.5rem 1rem 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.4rem;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #94a3b8;
+            font-weight: 300;
+        }
+
+        /* ================= Navigation ================= */
+        nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            padding: 0.75rem 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* ปุ่มแบบวงรี (Pill Buttons) */
+        nav ul li a {
+            display: inline-block;
+            padding: 0.5rem 1.4rem;
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            background-color: #f1f5f9;
+            transition: all 0.25s ease;
+            border: 1px solid transparent;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+            background-color: #2563eb;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+            transform: translateY(-1px);
+        }
+
+        /* เมนูหน้าที่กำลังเปิดอยู่ (ไฮไลต์หน้า Home) */
+        nav ul li a.active {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+
+        /* ================= Main Content ================= */
+        main {
+            flex: 1;
+            max-width: 800px;
+            width: 90%;
+            margin: 2.5rem auto;
+        }
+
+        section {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2e8f0;
+        }
+
+        section h2 {
+            font-size: 1.6rem;
+            color: #0f172a;
+            border-bottom: 3px solid #2563eb;
+            display: inline-block;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ================= Quick Links Cards ================= */
+        .quick-links-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .quick-links-list li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 1.25rem;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.25s ease;
+            text-align: center;
+        }
+
+        .quick-links-list li a:hover {
+            background-color: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        /* ================= Footer ================= */
+        footer {
+            background-color: #0f172a;
+            color: #64748b;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+            font-size: 0.875rem;
+        }
+
+        /* ================= Responsive ================= */
+        @media (max-width: 600px) {
+            header {
+                padding: 2.5rem 1rem 1.8rem;
+            }
+
+            header h1 {
+                font-size: 1.75rem;
+            }
+
+            nav ul {
+                gap: 0.35rem;
+            }
+
+            nav ul li a {
+                padding: 0.4rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            .quick-links-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- ================= HEADER ================= -->
-
     <header>
-
         <h1>Pornphithak Shitthi</h1>
-
-        <p>Information Technology Student | web Developer</p>
-
+        <p>Information Technology Student | Web Developer</p>
     </header>
 
     <!-- ================= NAVIGATION ================= -->
-
     <nav>
-
         <ul>
-
-            <li><a href="index.html">Home</a></li>
-
+            <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About</a></li>
-
             <li><a href="skills.html">Skills</a></li>
-
             <li><a href="gallery.html">Gallery</a></li>
-
             <li><a href="contact.html">Contact</a></li>
-             
             <li><a href="other.html">เพิ่มเติม</a></li>
-   
         </ul>
-
     </nav>
 
     <!-- ================= MAIN ================= -->
-
     <main>
 
         <section>
-
             <h2>Quick Links</h2>
 
-            <ul>
-
-                <li><a href="about.html">About Me</a></li>
-
+            <ul class="quick-links-list">
+                <li>
+                    <a href="about.html">About Me</a>
+                </li>
                 <li>
                     <a href="https://github.com/s69319010031-a11y/portfolio-std69319010031.git" target="_blank">
                         Visit GitHub
                     </a>
                 </li>
-
                 <li>
                     <a href="mailto:s69319010031@kktech.ac.th">
                         Send Email
                     </a>
                 </li>
-
                 <li>
                     <a href="contact.html">
-                         Contact Me
+                        Contact Me
                     </a>
                 </li>
-
             </ul>
 
         </section>
@@ -82,15 +246,8 @@
     </main>
 
     <!-- ================= FOOTER ================= -->
-
     <footer>
-
-        <p>
-
-            © 2026 Portfolio Demo
-
-        </p>
-
+        <p>© 2026 Portfolio Demo</p>
     </footer>
 
     <script src="js/script.js"></script>

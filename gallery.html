@@ -4,99 +4,322 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia - Pornphithak Shitthi</title>
 
-    <title>Portfolio - Pornphithak Shitthi</title>
+    <style>
+        /* ================= Google Fonts & Global Styles ================= */
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap');
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ================= Header ================= */
+        header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #ffffff;
+            text-align: center;
+            padding: 3.5rem 1rem 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.4rem;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #94a3b8;
+            font-weight: 300;
+        }
+
+        /* ================= Navigation ================= */
+        nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            padding: 0.75rem 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* ปุ่มแบบวงรี (Pill Buttons) */
+        nav ul li a {
+            display: inline-block;
+            padding: 0.5rem 1.4rem;
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            background-color: #f1f5f9;
+            transition: all 0.25s ease;
+            border: 1px solid transparent;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+            background-color: #2563eb;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+            transform: translateY(-1px);
+        }
+
+        /* เมนูหน้าที่กำลังเปิดอยู่ (ไฮไลต์หน้าปัจจุบัน) */
+        nav ul li a.active {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+
+        /* ================= Main Content ================= */
+        main {
+            flex: 1;
+            max-width: 850px;
+            width: 90%;
+            margin: 2.5rem auto;
+        }
+
+        section {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2e8f0;
+        }
+
+        section h2 {
+            font-size: 1.6rem;
+            color: #0f172a;
+            border-bottom: 3px solid #2563eb;
+            display: inline-block;
+            padding-bottom: 0.4rem;
+            margin-bottom: 2rem;
+        }
+
+        /* ================= Multimedia Cards ================= */
+        .media-card {
+            background-color: #f8fafc;
+            border: 1px solid #f1f5f9;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.75rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        .media-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .media-card h3 {
+            font-size: 1.15rem;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Profile Image Styling */
+        .profile-img-container {
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 0;
+        }
+
+        .profile-img-container img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Audio & Video Elements */
+        audio {
+            width: 100%;
+            border-radius: 30px;
+            outline: none;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Responsive Iframe Container (YouTube & Maps) */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ================= Footer ================= */
+        footer {
+            background-color: #0f172a;
+            color: #64748b;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+            font-size: 0.875rem;
+        }
+
+        /* ================= Responsive ================= */
+        @media (max-width: 600px) {
+            header {
+                padding: 2.5rem 1rem 1.8rem;
+            }
+
+            header h1 {
+                font-size: 1.75rem;
+            }
+
+            nav ul {
+                gap: 0.35rem;
+            }
+
+            nav ul li a {
+                padding: 0.4rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            section {
+                padding: 1.25rem;
+            }
+
+            .media-card {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- ================= HEADER ================= -->
-
     <header>
-
         <h1>Pornphithak Shitthi</h1>
-
         <p>Information Technology Student | Web Developer</p>
-
     </header>
 
     <!-- ================= NAVIGATION ================= -->
-
     <nav>
-
         <ul>
-
             <li><a href="index.html">Home</a></li>
-
             <li><a href="about.html">About</a></li>
-
             <li><a href="skills.html">Skills</a></li>
-
-            <li><a href="gallery.html">Gallery</a></li>
-
+            <li><a href="gallery.html" class="active">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
-             
             <li><a href="other.html">เพิ่มเติม</a></li>
-   
         </ul>
-
     </nav>
 
     <!-- ================= MAIN ================= -->
-
     <main>
 
         <!-- ================= MULTIMEDIA SECTION ================= -->
-
         <section>
 
             <h2>Multimedia & Embeds</h2>
 
             <!-- 1. Image พร้อม alt -->
-            <h3>รูปโปรไฟล์ (Image)</h3>
-            <img src="images/785279528_937926836023737_3471676439572008657_n.jpg" alt="รูปถ่ายของ Pornphithak Shitthi" width="200">
+            <div class="media-card">
+                <h3>รูปโปรไฟล์ (Image)</h3>
+                <div class="profile-img-container">
+                    <img src="images/785279528_937926836023737_3471676439572008657_n.jpg" alt="รูปถ่ายของ Pornphithak Shitthi">
+                </div>
+            </div>
 
             <!-- 2. Audio -->
-            <h3>ไฟล์เสียง (Audio)</h3>
-            <audio controls>
-                <source src="audio/videoplayback.mp4" type="audio/mpeg">
-                เบราว์เซอร์ของคุณไม่รองรับการเล่นไฟล์เสียง
-            </audio>
+            <div class="media-card">
+                <h3>ไฟล์เสียง (Audio)</h3>
+                <audio controls>
+                    <source src="audio/videoplayback.mp4" type="audio/mpeg">
+                    เบราว์เซอร์ของคุณไม่รองรับการเล่นไฟล์เสียง
+                </audio>
+            </div>
 
             <!-- 3. Video -->
-            <h3>วิดีโอ (Video)</h3>
-            <video width="400" controls>
-                <source src="video.mp4" type="video/mp4">
-                เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
-            </video>
+            <div class="media-card">
+                <h3>วิดีโอ (Video)</h3>
+                <div class="video-wrapper">
+                    <video controls>
+                        <source src="video.mp4" type="video/mp4">
+                        เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+                    </video>
+                </div>
+            </div>
 
             <!-- 4. YouTube Embed -->
-            <h3>วิดีโอจาก YouTube</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/35KDnej1hlI?si=6znbA42axf0ZfkGd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="media-card">
+                <h3>วิดีโอจาก YouTube</h3>
+                <div class="iframe-container">
+                    <iframe src="https://www.youtube.com/embed/35KDnej1hlI?si=6znbA42axf0ZfkGd" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
 
-            <!-- 5. Google Maps Embed (ตำบลบ้านทุ่ม) -->
-            <h3>แผนที่ตำบลบ้านทุ่ม ขอนแก่น</h3>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4550.605814007914!2d102.71766528736434!3d16.445731966633286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x312261b136e8ddcb%3A0xc03205af1f0434e2!2z4LmA4Lil4LmJ4Liy4LiC4LmJ4Liy4LinIC1Mb3VuZ2UgS2hhdyBzcGVjaWFsdHkgY29mZmVl!5e0!3m2!1sth!2sth!4v1787559539879!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-
-
+            <!-- 5. Google Maps Embed -->
+            <div class="media-card">
+                <h3>แผนที่ตำบลบ้านทุ่ม ขอนแก่น</h3>
+                <div class="iframe-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4550.605814007914!2d102.71766528736434!3d16.445731966633286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x312261b136e8ddcb%3A0xc03205af1f0434e2!2z4LmA4Lil4LmJ4Liy4LiC4LmJ4Liy4LinIC1Mb3VuZ2UgS2hhdw!5e0!3m2!1sth!2sth!4v1787559539879!5m2!1sth!2sth" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
 
         </section>
 
     </main>
 
     <!-- ================= FOOTER ================= -->
-
     <footer>
-
-        <p>
-
-            © 2026 Pornphithak Shitthi. All Rights Reserved.
-
-        </p>
-
+        <p>© 2026 Pornphithak Shitthi. All Rights Reserved.</p>
     </footer>
 
     <script src="js/script.js"></script>
